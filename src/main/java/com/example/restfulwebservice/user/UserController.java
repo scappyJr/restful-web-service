@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -14,7 +15,6 @@ public class UserController {
 
     /**
      * 생성자를 통한 의존성 주입
-     * @param service
      */
     public UserController(UserDaoService service) {
         this.service = service;
@@ -47,9 +47,11 @@ public class UserController {
 
     /**
      * User 생성
+     * @param user 사용자 정보
+     * @return
      */
     @PostMapping("/users")
-    public ResponseEntity<User> createUser(@RequestBody User user) {
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user) {
         User savedUser = service.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -75,7 +77,7 @@ public class UserController {
 
     /**
      * User 수정
-     * @param user User 정보
+     * @param user 사용자 정보
      * @return
      */
     @PutMapping("/users/{id}")

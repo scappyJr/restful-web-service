@@ -73,7 +73,7 @@ public class UserDaoService {
     public User save(User user) {
         if (user.getId() == null) {
             user.setId(++usersCount);
-            user.setJoinDate(new Date());
+            // user.setJoinDate(new Date());
         }
 
         users.add(user);
