@@ -60,4 +60,33 @@ public class UserController {
         return ResponseEntity.created(location).build();
     }
 
+    /**
+     * User 삭제
+     * @param id 사용자 ID
+     */
+    @DeleteMapping("/users/{id}")
+    public void deleteUser(@PathVariable int id) {
+        User user = service.deleteById(id);
+
+        if (user == null) {
+            throw new UserNotFoundException(String.format("ID[%s] not found", id));
+        }
+    }
+
+    /**
+     * User 수정
+     * @param user User 정보
+     * @return
+     */
+    @PutMapping("/users/{id}")
+    public User updateUser(@PathVariable int id, @RequestBody User user) {
+        User updatedUser = service.update(id, user);
+
+        if (updatedUser == null) {
+            throw new UserNotFoundException(String.format("ID[%s] not found", user.getId()));
+        }
+
+        return updatedUser;
+    }
+
 }
