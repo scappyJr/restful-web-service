@@ -47,7 +47,8 @@ public class AdminUserController {
      */
 //    @GetMapping("/v1/users/{id}")
 //    @GetMapping(path = "/users/{id}/", params = "version=1") // path 대신 value 사용 가능
-    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+//    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=1")
+    @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appv1+json")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id) {
         User user = service.findOne(id);
 
@@ -71,7 +72,8 @@ public class AdminUserController {
      */
 //    @GetMapping("/v2/users/{id}")
 //    @GetMapping(path = "/users/{id}/", params = "version=2") // path 대신 value 사용 가능
-    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+//    @GetMapping(value = "/users/{id}", headers = "X-API-VERSION=2")
+    @GetMapping(value = "/users/{id}", produces = "application/vnd.company.appv2+json")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id) {
         User user = service.findOne(id);
 
