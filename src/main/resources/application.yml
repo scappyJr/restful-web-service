@@ -4,3 +4,8 @@ server:
 logging:
   level:
     org.springframework: DEBUG
+
+# 설정 파일명이 "messages", 확장자는 ".properties"
+spring:
+  messages:
+    basename: messages
