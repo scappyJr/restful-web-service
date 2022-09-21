@@ -45,7 +45,8 @@ public class AdminUserController {
      * @param id 어드민 사용자 ID
      * @return
      */
-    @GetMapping("/v1/users/{id}")
+//    @GetMapping("/v1/users/{id}")
+    @GetMapping(path = "/users/{id}/", params = "version=1")
     public MappingJacksonValue retrieveUserV1(@PathVariable int id) {
         User user = service.findOne(id);
 
@@ -67,7 +68,8 @@ public class AdminUserController {
      * @param id 어드민 사용자 ID
      * @return
      */
-    @GetMapping("/v2/users/{id}")
+//    @GetMapping("/v2/users/{id}")
+    @GetMapping(path = "/users/{id}/", params = "version=2")
     public MappingJacksonValue retrieveUserV2(@PathVariable int id) {
         User user = service.findOne(id);
 
