@@ -17,9 +17,9 @@ public class UserDaoService {
         /**
          * users 를 static 으로 선언했기 때문에 static 블록에서 User 객체 생성 및 추가 가능
          */
-        users.add(new User(1, "Kim", new Date()));
-        users.add(new User(2, "Lee", new Date()));
-        users.add(new User(3, "Park", new Date()));
+        users.add(new User(1, "Kim", new Date(), "pass1", "801010-1111111"));
+        users.add(new User(2, "Lee", new Date(), "pass2", "901010-1111111"));
+        users.add(new User(3, "Park", new Date(), "pass3", "941010-2222222"));
     }
 
     /**

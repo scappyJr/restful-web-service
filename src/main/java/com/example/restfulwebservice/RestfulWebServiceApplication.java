@@ -21,4 +21,5 @@ public class RestfulWebServiceApplication {
         localeResolver.setDefaultLocale(Locale.KOREA);
         return localeResolver;
     }
+
 }
