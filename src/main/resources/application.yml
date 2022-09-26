@@ -6,8 +6,10 @@ logging:
     org.springframework: DEBUG
 
 spring:
-  mvc:
-    pathmatch:
-      matching-strategy: ant_path_matcher # Spring Boot 2.6.x 이후 버전에서 springfox-swagger3.0 적용 시 에러 방지 위함
   messages:
     basename: messages  # 설정 파일명이 "messages", 확장자는 ".properties"
+
+springdoc:
+  version: v1.0.0
+  api-docs:
+    path: /api-docs
