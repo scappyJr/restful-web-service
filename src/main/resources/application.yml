@@ -1,15 +1,26 @@
+# server port 변경
 server:
   port: 8088
 
+# 로깅
 logging:
   level:
     org.springframework: DEBUG
 
+# 다국어처리
 spring:
   messages:
     basename: messages  # 설정 파일명이 "messages", 확장자는 ".properties"
 
+# swagger
 springdoc:
   version: v1.0.0
   api-docs:
     path: /api-docs
+
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

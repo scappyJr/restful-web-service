@@ -15,5 +15,4 @@ public class ExceptionResponse {
     private String message; // 예외 메시지
     private String details; // 예외 상세 정보
 
-
 }
