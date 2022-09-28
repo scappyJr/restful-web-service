@@ -7,10 +7,11 @@ logging:
   level:
     org.springframework: DEBUG
 
-# 다국어처리
 spring:
   messages:
-    basename: messages  # 설정 파일명이 "messages", 확장자는 ".properties"
+    basename: messages  # 다국어처리 - 설정 파일명이 "messages", 확장자는 ".properties"
+  datasource:
+    url: jdbc:h2:mem:testdb # h2-console
 
 # swagger
 springdoc:
