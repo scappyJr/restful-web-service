@@ -8,6 +8,9 @@ logging:
     org.springframework: DEBUG
 
 spring:
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
   messages:
     basename: messages  # 다국어처리 - 설정 파일명이 "messages", 확장자는 ".properties"
   datasource:
